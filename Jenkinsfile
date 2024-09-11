@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Start app') {
             steps {
+                sh 'echo "IT WORKS!!"'
                 sh 'python3 app.py'
             }
         }
