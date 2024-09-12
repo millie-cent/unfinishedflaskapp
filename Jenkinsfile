@@ -1,15 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Install dependencies') {
+        stage('Build Image') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                sh 'sudo docker build -t theearlofgray/flaskappexample .'
             }
         }
-        stage('Start app') {
+        stage('Deploy container') {
             steps {
-                sh 'echo "IT WORKS!!"'
-                sh 'python3 app.py'
+                sh 'docker run -d -p 5000:5000 --name flaskapp theearlofgray/flaskappexample'
             }
         }
     }
