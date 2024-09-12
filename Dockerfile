@@ -9,4 +9,4 @@ RUN pip3 install -r requirements.txt
 # expose port
 EXPOSE 5000
 # create entry point
-ENTRYPOINT["python3", "app.py"]
+ENTRYPOINT ["python3", "app.py"]
